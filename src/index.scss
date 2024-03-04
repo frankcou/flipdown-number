@@ -1,0 +1,124 @@
+@keyframes TopAni {
+  from {
+    transform: rotateX(0deg);
+  }
+  to {
+    transform: rotateX(-180deg);
+  }
+}
+.FlipDownNumberItem {
+  position: relative;
+  text-align: center;
+  height: 300px;
+  line-height: 300px;
+  width: 150px;
+  font-size: 150px;
+  color: #fff;
+
+  &.ani {
+    @keyframes PreAni {
+      from {
+        z-index: -1;
+      }
+      to {
+        z-index: -1;
+      }
+    }
+    .FlipDownNumberItem-pre {
+      z-index: 2;
+      animation: PreAni 0.000001s linear 0.7s forwards;
+
+      .top {
+        animation: TopAni 0.7s ease-in-out 0s forwards;
+      }
+    }
+  }
+  .FlipDownNumberItem-pre {
+    position: absolute;
+    z-index: 0;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    // color: #ccc;
+    transform-origin: bottom center;
+    transform-style: preserve-3d;
+    perspective: 500px;
+    // .bottom {
+    //   background: #000;
+    // }
+  }
+  .FlipDownNumberItem-curr {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    // color: #ccc;
+    .top {
+      overflow: hidden;
+    }
+  }
+  .top {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 50%;
+    border: 3px solid #ccc;
+    transform-origin: bottom center;
+    transform-style: preserve-3d;
+    background: #000;
+
+    .box_3d {
+      display: flex;
+      justify-content: space-evenly;
+      width: 200%;
+      height: 100%;
+      backface-visibility: hidden;
+      transform-style: preserve-3d;
+      .front {
+        width: 100%;
+        flex: 1;
+        // background: blue;
+        background: #000;
+        transform-origin: center;
+        transform: translateZ(1px);
+        overflow: hidden;
+      }
+      .back {
+        width: 100%;
+        flex: 1;
+        transform: rotateX(180deg) translateX(-100%) translateZ(0px);
+        transform-origin: center;
+        // color: #ccc;
+        // background: #000;
+        background: #000;
+        line-height: 0;
+        overflow: hidden;
+      }
+    }
+  }
+  .bottom {
+    position: absolute;
+    z-index: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50%;
+    border: 3px solid #ccc;
+    transform-origin: top center;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    overflow: hidden;
+    background: #000;
+    span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      transform: translateY(-50%);
+    }
+  }
+}
