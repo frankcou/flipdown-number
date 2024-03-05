@@ -27,16 +27,22 @@ export class FlipDownNumberItem {
   }
   flip(value) {
     if (value === this.curr) return;
-    this._dom.classList.remove("ani");
+    const classList = this._dom.classList;
+    const hasAniClass = Array.from(this._dom.classList).includes("ani");
+    if (hasAniClass) {
+      classList.remove("ani");
+    } else {
+      classList.remove("ani_copy");
+    }
     this.previous = this.curr;
     this.updatePre();
-    setTimeout(() => {
-      requestAnimationFrame(() => {
-        this._dom.classList.add("ani");
-        this.curr = value;
-        this.updateCurr();
-      });
-    }, 5);
+    if (hasAniClass) {
+      classList.add("ani_copy");
+    } else {
+      classList.add("ani");
+    }
+    this.curr = value;
+    this.updateCurr();
   }
   mount(container) {
     const template = `<div class="FlipDownNumberItem">

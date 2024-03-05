@@ -36,7 +36,7 @@ const config = defineConfig(
             plugins: [
                 scss({
                     fileName: 'index.css',
-                    outputStyle: 'compressed' // 可选，压缩CSS
+                    // outputStyle: 'compressed' // 可选，压缩CSS
                 }),
             ],
         },
