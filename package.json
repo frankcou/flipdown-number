@@ -1,12 +1,12 @@
 {
   "name": "flipdown-number",
-  "version": "0.0.4",
+  "version": "1.0.0",
   "description": "flipdown the number",
   "main": "./dist/index.umd.js",
   "module":"./dist/index.es.js",
   "scripts": {
     "build": "rimraf -rf ./dist && npx rollup -c",
-    "pub":"npm publish && git push github main"
+    "pub":"npm publish && git push && git push github main"
   },
   "keywords": [
     "flip",
