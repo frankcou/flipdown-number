@@ -1,26 +1,27 @@
 {
   "name": "flipdown-number",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "flipdown the number",
   "main": "./dist/index.umd.js",
-  "module":"./dist/index.es.js",
+  "module": "./dist/index.es.js",
   "scripts": {
     "build": "rimraf -rf ./dist && npx rollup -c",
-    "pub":"npm run build && npm publish && git push && git push github main"
+    "pub": "npm run build && npm publish && git push && git push github main"
   },
   "keywords": [
     "flip",
     "flipdown",
     "number",
     "flip-number",
-    "score","card"
+    "score",
+    "card"
   ],
   "author": "frankcou@163.com",
   "license": "ISC",
   "files": [
     "dist/",
     "src/"
-   ],
+  ],
   "devDependencies": {
     "@rollup/plugin-typescript": "^11.1.6",
     "node-sass": "^9.0.0",

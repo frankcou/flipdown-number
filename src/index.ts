@@ -28,21 +28,16 @@ export class FlipDownNumberItem {
   flip(value) {
     if (value === this.curr) return;
     const classList = this._dom.classList;
-    const hasAniClass = [...this._dom.classList.includes("ani")];
-    if (hasAniClass) {
-      classList.remove("ani");
-    } else {
-      classList.remove("ani_copy");
-    }
+    classList.remove("ani");
     this.previous = this.curr;
     this.updatePre();
-    if (hasAniClass) {
-      classList.add("ani_copy");
-    } else {
-      classList.add("ani");
-    }
-    this.curr = value;
-    this.updateCurr();
+    requestAnimationFrame(() => {
+      setTimeout(() => {
+        classList.add("ani");
+        this.curr = value;
+        this.updateCurr();
+      });
+    });
   }
   mount(container) {
     const template = `<div class="FlipDownNumberItem">

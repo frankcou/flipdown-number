@@ -26,7 +26,9 @@ const config = defineConfig(
                     format: "cjs",
                 },
             ],
-            plugins: [typescript()]
+            plugins: [typescript({
+                lib: ['es2016', 'dom']
+            })]
         },
         {
             input: "src/index.scss",
