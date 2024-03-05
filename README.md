@@ -1,4 +1,4 @@
-![example](https://github.com/frankcou/flipdown-number/blob/main/image.png?raw=true)
+![example](https://raw.githubusercontent.com/frankcou/flipdown-number/main/image.png)
 
 ## Example
 
