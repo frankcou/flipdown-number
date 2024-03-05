@@ -1,4 +1,4 @@
-![example](./image.png)
+![example](https://github.com/frankcou/flipdown-number/blob/main/image.png?raw=true)
 
 ## Example
 

@@ -6,7 +6,7 @@
   "module":"./dist/index.es.js",
   "scripts": {
     "build": "rimraf -rf ./dist && npx rollup -c",
-    "pub":"npm publish && "
+    "pub":"npm publish && git push github main"
   },
   "keywords": [
     "flip",
@@ -30,5 +30,9 @@
     "rollup": "^4.12.0",
     "rollup-plugin-scss": "^4.0.0",
     "tslib": "^2.6.2"
+  },
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/frankcou/flipdown-number.git"
   }
 }
