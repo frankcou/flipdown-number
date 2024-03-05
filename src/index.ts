@@ -28,7 +28,7 @@ export class FlipDownNumberItem {
   flip(value) {
     if (value === this.curr) return;
     const classList = this._dom.classList;
-    const hasAniClass = Array.from(this._dom.classList).includes("ani");
+    const hasAniClass = [...this._dom.classList.includes("ani")];
     if (hasAniClass) {
       classList.remove("ani");
     } else {

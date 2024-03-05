@@ -1,4 +1,4 @@
-@keyframes TopAni {
+@mixin top_ani() {
   from {
     transform: rotateX(0deg);
   }
@@ -6,6 +6,14 @@
     transform: rotateX(-180deg);
   }
 }
+@keyframes TopAni {
+  @include top_ani();
+}
+
+@keyframes TopAniCopy {
+  @include top_ani();
+}
+
 .FlipDownNumberItem {
   position: relative;
   text-align: center;
@@ -35,6 +43,9 @@
   }
   &.ani_copy {
     @extend .ani;
+    .FlipDownNumberItem-pre .top {
+      animation: TopAniCopy 0.7s ease-in-out 0s forwards;
+    }
   }
   .FlipDownNumberItem-pre {
     position: absolute;
