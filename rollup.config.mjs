@@ -15,7 +15,7 @@ const config = defineConfig(
                 {
                     file: 'dist/index.umd.js',
                     format: 'umd',
-                    name: 'FlipNumber',
+                    name: 'FlipDownNumber',
                 },
                 {
                     file: "dist/index.es.js",
