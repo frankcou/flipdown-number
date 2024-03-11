@@ -5,20 +5,20 @@
 script:
 
 ```js
-import FlipNumber from "flipdown-number";
+import FlipDownNumber from "flipdown-number";
 let a = 0;
-const FlipNumberClass = new FlipNumber(container, {
+const fdn = new FlipDownNumber(container, {
   initValue: "0", //default number
   minBit: 4,
 });
 
 // update number
 setTimeout(() => {
-  FlipNumberClass.set(++a);
+  fdn.set(++a);
 }, 1000);
 
 // before unmount
-FlipNumberClass.destory();
+fdn.destory();
 ```
 
 styles:
